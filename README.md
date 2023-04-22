@@ -1,4 +1,4 @@
-# VML-padding-based-CTA-link-generator
+# VML padding based CTA link generator
 Another VML padding based CTA link generator
 
 See a working example on my [codepen](https://codepen.io/matthieuSolente/pen/BaqpxLR)
