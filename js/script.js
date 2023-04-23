@@ -29,8 +29,8 @@
     bRadius = $('#bRadius').val()+'px';
     bgcss = 'background-color:'+$('#bgColor').val();
     arcsize = Math.ceil($('#bRadius').val()/$(cssBtnClass).outerHeight()*100); 
-    vmlwidth = 'width:' + Math.ceil($(cssBtnClass).outerWidth())+'px';
-    vmlheight = 'height:' + Math.ceil($(cssBtnClass).outerHeight())+'px';
+    vmlwidth = 'width:' + Math.ceil($(cssBtnClass).outerWidth()).toFixed(1)*0.75+'pt';
+    vmlheight = 'height:' + Math.ceil($(cssBtnClass).outerHeight()).toFixed(1)*0.75+'pt';
     if($('#fontBold').is(':checked')){
       fontBold = 'font-weight:bold;'
     }else{
@@ -68,7 +68,7 @@ $(document).ready(function(){
 $( "input, select" ).on('change',function() {
   updateValues();
 });
-  $('#btnClass').on('change',function() {
+$('#btnClass').on('change',function() {
   updateValues();
 });
 })(jQuery);
