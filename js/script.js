@@ -68,4 +68,7 @@ $(document).ready(function(){
 $( "input, select" ).on('change',function() {
   updateValues();
 });
+  $('#btnClass').on('change',function() {
+  updateValues();
+});
 })(jQuery);
