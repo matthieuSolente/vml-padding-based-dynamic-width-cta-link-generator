@@ -1,4 +1,4 @@
-# VML padding based CTA link generator
+# Dynamic and Flexible auto width VML Button !
 Another VML padding based CTA link generator
 
 See a working example on my [codepen](https://codepen.io/matthieuSolente/pen/BaqpxLR)
