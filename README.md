@@ -7,9 +7,6 @@ The idea for this generator came to me while analyzing the buttons created in BE
 
 Some explanations :
 
-### No width and height
-The generator uses the outerHeight() function to calculate the height of the button on the fly. 
-
 ### Arcise
 To obtain the value of the arcsize, we retrieve the border-radius in pixel inserted by the user, and divide it by the height of the block, multiplied by 100. 
 
@@ -20,6 +17,8 @@ arcsize=Math.ceil($('#bRadius').val()/$(cssBtnClass).outerHeight()*100);
 ### cta VML width and height
 
 The height and width of the button, in its VML version, is automatically calculated according to the size of the html button, using the outerHeight function.
+
+you just have to enter the padding for your button, and the generator will automatically calculate the size and width of the v:roundrect component. This will make it possible to have a pixel-perfect button on all mailboxes.
 
 ```javascript
 vmlwidth = 'width:' + Math.ceil($(cssBtnClass).outerWidth()).toFixed(1)*0.75+'pt';
