@@ -1,5 +1,5 @@
  (function($){
-    var urlLink,btnText,btnClass,cssBtnClass,backgroundColor,fontColor,borderColor,fontFamily,fontSize,tbPadding,lrPadding,bRadius,bordervml,bgcss,bgvml,bordercss,generatedButton,generateCss,arcsize,align,letterspacing,msoTextRaise,lineHeight;
+    var urlLink,btnText,btnClass,cssBtnClass,backgroundColor,fontColor,borderColor,fontFamily,fontSize,tbPadding,lrPadding,bRadius,bordervml,bgcss,bgvml,bordercss,generatedButton,generateCss,arcsize;
  function updateValues() { 
     urlLink = $('#linkUrl').val();
     btnText = $('#btnText').val();
@@ -25,7 +25,6 @@
     bgvml = 'fillcolor="'+$('#bgColor').val()+'"';
     tbPadding = $('#tbPadding').val()+'px';
     lrPadding = $('#lrPadding').val()+'px';
-    align = $('#align').val();
     bRadius = $('#bRadius').val()+'px';
     bgcss = 'background-color:'+$('#bgColor').val();
     arcsize = Math.ceil($('#bRadius').val()/$(cssBtnClass).outerHeight()*100); 
@@ -41,8 +40,8 @@
     }else{
       textTransform = '';
     }
-    generatedButtonPreview = '<!--[if mso]>\n<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="mso-position-horizontal:'+align+';v-text-anchor:middle;'+vmlheight+';'+vmlwidth+'" arcsize="'+arcsize+'%" '+bordervml+' '+bordervmlwidth+' '+bgvml+'>\n<w:anchorlock/>\n<center>\n<![endif]-->\n<a '+btnClass+' href="'+urlLink+'" style="'+bordercss+'font-family:'+fontFamily+';font-size:'+fontSize+';mso-line-height-rule:exactly;line-height:1.5;background-color:'+ bgColor +';text-decoration:none;text-underline-color:'+bgColor+';'+textTransform+' padding:'+tbPadding+' '+lrPadding+';color:'+fontColor+';'+fontBold+'display:inline-block;border-radius:'+bRadius+';mso-border-alt:none;mso-padding-alt:0px;">\n'+btnText+'</a>\n<!--[if mso]>\n</center>\n</v:roundrect>\n<![endif]-->';
-    generatedButton = '&lt;!--[if mso]&gt;\n&lt;v:roundrect xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:w=&quot;urn:schemas-microsoft-com:office:word&quot; style=&quot;mso-position-horizontal:'+align+';v-text-anchor:middle;'+vmlheight+';'+vmlwidth+'&quot; arcsize=&quot;'+arcsize+'%&quot; '+bordervml+' '+bordervmlwidth+' '+bgvml+'&gt;\n&lt;w:anchorlock/&gt;\n&lt;center&gt;\n&lt;![endif]--&gt;\n&lt;a '+btnClass+' href=&quot;'+urlLink+'&quot; style=&quot;'+bordercss+'font-family:'+fontFamily+';font-size:'+fontSize+';mso-line-height-rule:exactly;line-height:1.5;background-color:'+ bgColor +';text-decoration:none;text-underline-color:'+bgColor+';'+textTransform+' padding:'+tbPadding+' '+lrPadding+';color:'+fontColor+';'+fontBold+'display:inline-block;border-radius:'+bRadius+';mso-border-alt:none;mso-padding-alt:0px;&quot;&gt;\n'+btnText+'&lt;/a&gt;\n&lt;!--[if mso]&gt;\n&lt;/center&gt;\n&lt;/v:roundrect&gt;\n&lt;![endif]--&gt;';
+    generatedButtonPreview = '<!--[if mso]>\n<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="v-text-anchor:middle;'+vmlheight+';'+vmlwidth+'" arcsize="'+arcsize+'%" '+bordervml+' '+bordervmlwidth+' '+bgvml+'>\n<v:textbox inset="0,0,0,0" style="mso-fit-shape-to-text:f">\n<center>\n<![endif]-->\n<a '+btnClass+' href="'+urlLink+'" style="'+bordercss+'font-family:'+fontFamily+';font-size:'+fontSize+';mso-line-height-rule:exactly;line-height:1.5;mso-line-height-alt:150%;background-color:'+ bgColor +';text-decoration:none;text-underline-color:'+bgColor+';'+textTransform+' padding:'+tbPadding+' '+lrPadding+';color:'+fontColor+';'+fontBold+'display:inline-block;border-radius:'+bRadius+';mso-border-alt:none;mso-padding-alt:0px;">\n'+btnText+'</a>\n<!--[if mso]>\n</center>\n</v:textbox>\n</v:roundrect>\n<![endif]-->';
+    generatedButton = '&lt;!--[if mso]&gt;\n&lt;v:roundrect xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:w=&quot;urn:schemas-microsoft-com:office:word&quot; style=&quot;v-text-anchor:middle;'+vmlheight+';'+vmlwidth+'&quot; arcsize=&quot;'+arcsize+'%&quot; '+bordervml+' '+bordervmlwidth+' '+bgvml+'&gt;\n&lt;v:textbox inset=&quot;0,0,0,0&quot; style=&quot;mso-fit-shape-to-text:f&quot;&gt;\n&lt;center&gt;\n&lt;![endif]--&gt;\n&lt;a '+btnClass+' href=&quot;'+urlLink+'&quot; style=&quot;'+bordercss+'font-family:'+fontFamily+';font-size:'+fontSize+';mso-line-height-rule:exactly;line-height:1.5;mso-line-height-alt:150%;background-color:'+ bgColor +';text-decoration:none;text-underline-color:'+bgColor+';'+textTransform+' padding:'+tbPadding+' '+lrPadding+';color:'+fontColor+';'+fontBold+'display:inline-block;border-radius:'+bRadius+';mso-border-alt:none;mso-padding-alt:0px;&quot;&gt;\n'+btnText+'&lt;/a&gt;\n&lt;!--[if mso]&gt;\n&lt;/center&gt;\n&lt;/v:textbox&gt;\n&lt;/v:roundrect&gt;\n&lt;![endif]--&gt;';
 
     if($('#fontColor').val()==='#ffffff'||$('#fontColor').val()==='#fff'){
       generateCss = '&lt;!--[if gte mso 16]&gt;\n&lt;style&gt;\n '+cssBtnClass+'{\nbackground: transparent !important;\nmso-style-textfill-type:gradient;\n mso-style-textfill-fill-gradientfill-stoplist:&quot;0 \#FFFFFF 0 100000\,100000 \#FFFFFF 0 100000&quot;;\ncolor:#000000 !important;\n background: transparent !important;\n}\n&lt;/style&gt;\n&lt;![endif]--&gt;';
